@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projects-saloon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+     crossorigin="anonymous"></script>
+     <!-- Correct FontAwesome Link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+<!-- css -->
+<style>
+    /* header */
+    #header {
+            background-color: #2d3338;
+            color: white;
+            padding: 20px;
+            border-radius: 10px
+    }
+    .view-map {
+        color: lightgreen;
+        
+    }
+    .service-item {
+        font-size: 20px;
+        padding: 20px;
+
+    }
+
+    /* button */
+    .btn-btn {
+        background-color: #00bcd4;
+        color: white;
+    }
+    .tab:hover {
+        color: aquamarine
+        ;
+    }
+    /* staffs card */
+    .ryan.active {
+        background-color: #00bcd4;
+       
+    }
+    .staff-select {
+            margin: 20px 0;
+        }
+        .staff-option {
+        
+            padding: 10px 20px;
+            
+            margin: 5px;
+            cursor: pointer;
+        }
+        
+        .bi-circle {
+            padding: 10px;
+        }
+        .bi-circle-fill {
+            color:#00bcd4;
+            padding: 5px;
+
+        }
+        
+        .select-date {
+            margin: 20px 0;
+        }
+        .date-option {
+            padding: 10px 20px;
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 70px;
+            height: 80px;
+            
+            margin: 15px;
+
+        }
+        .arrow {
+            font-size: 40px;
+            cursor: pointer;
+            margin-top: 5px;
+            padding: 20px;
+        }
+        .date-option.active {
+            background-color: #00bcd4;
+            color: white;
+            font-weight: bolder;
+        }
+        .time-slot {
+            border: 1px solid #dee2e6;
+            padding: 8px 15px;
+            border-radius: 15px;
+            margin: 5px;
+            cursor: pointer;
+            
+        }
+        .time-slot.active {
+            background-color: #00bcd4;
+            color: white;
+        }
+        /* form */
+        .form-section {
+      max-width: 500px;
+      margin: auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 10px;
+    }
+    .form-label {
+      font-weight: 600;
+    }
+    .calendar-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    .fa-circle-check {
+        color: #00bcd4;
+    }
+        
+
+</style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8" id="header">
+                <!-- Your existing header content -->
+            
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-light text-dark p-2 rounded me-3">N</div>
+                    <div>
+                        <h4 class="mb-0">Natural Beauty Salon, Spa and Wellness Center</h4>
+                        
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <i class="bi bi-geo-alt"></i> 319, Bin Souqat centre, Rashidiya branch, UAE
+                    <a href="#" class="view-map p-5">View Map</a>
+                </div>
+                <div class="mb-2">
+                    <i class="bi bi-clock"></i> 9:00 AM to 9:00 PM
+                </div>
+                <div>
+                    <i class="bi bi-lightning"></i> Instant booking
+                    <p class="rating">★ 4.8</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.pexels.com/photos/705255/pexels-photo-705255.jpeg" alt="Salon" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>          <!--header closing div tag-->
+
+    <div class="container mt-4">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" id="salonTabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#services"><h1 class="tab">Services</h1></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#gift-vouchers"><h1 class="tab">Gift Vouchers</h1></a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#booking">Book Appointment</a>
+            </li> -->
+        </ul>
+        <div class="tab-content mt-4">
+            <div class="tab-pane fade show active" id="services">
+                <div class="row">
+                    <!-- Service Categories -->
+                    <div class="col-md-4">
+                        <!-- Your existing service categories list -->
+                        <ul class="list-group services-list">
+                            <li class="list-group-item active">Hair Services</li>
+                            <li class="list-group-item">Beauty Services</li>
+                            <li class="list-group-item">Spa Services</li>
+                            <li class="list-group-item">Nail Services</li>
+                            <li class="list-group-item">Bridal Services</li>
+                            <li class="list-group-item">Haircare Services</li>
+                            <li class="list-group-item">Skin care Services</li>
+                            <li class="list-group-item">Groom Services</li>
+                            <li class="list-group-item">Menicure Services</li>
+                            <li class="list-group-item">Pedicure Services</li>
+                            <li class="list-group-item">Facial Services</li>
+                            <li class="list-group-item">Massage Services</li>
+                            <li class="list-group-item">Detox Services</li>
+        
+                        </ul>
+                        
+
+                    </div>
+
+                    <!-- Service Items -->
+                    <div class="col-md-5">
+                        <!-- Your existing service items -->
+                         <h1>Hair services</h1>
+                         <hr>
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        Haircut
+                                        
+                                    </label>
+                                    <div class="duration">30 mins</div>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                            
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        HairColor
+                                        <div class="duration"> 2hrs 30 mins</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                            
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        HairExtensions
+                                        <div class="duration"> 2hrs 30 mins</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                            
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        HairSpa
+                                        <div class="duration">30 mins</div>
+                                    </label>
+                                    
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div> 
+                            
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        <h1>Beauty services</h1>
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        Haircut
+                                        <div class="duration">30 mins</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        Haircut
+                                        <div class="duration">30 mins</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input " type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        Haircut
+                                        <div class="duration">30 mins</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        Haircut
+                                        <div class="duration">30 mins</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        
+        
+        
+        
+        
+        
+                         
+
+                    </div> <!--services column div close hole tag-->
+
+                    <!-- 2nd card servoces -->
+
+
+                    <!-- Cart -->
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5>Cart</h5>
+                                <div id="cart-items">
+                                    <!-- Cart items will be added here -->
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <span>Total:</span>
+                                    <span id="cart-total">$0</span>
+                                </div>
+                                <button class="book-btn w-100 mt-3">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 2nd card -->
+        <div class="tab-content mt-4">
+            <div class="tab-pane fade show active" id="services">
+                <div class="row">
+                    <!-- Service Categories -->
+                    <div class="col-md-4">
+                        <!-- Your existing service categories list -->
+                        <ul class="list-group services-list">
+                            <li class="list-group-item active">Hair Services</li>
+                            <li class="list-group-item">Beauty Services</li>
+                            <li class="list-group-item">Spa Services</li>
+                            <li class="list-group-item">Nail Services</li>
+                            <li class="list-group-item">Bridal Services</li>
+                            <li class="list-group-item">Haircare Services</li>
+                            <li class="list-group-item">Skin care Services</li>
+                            <li class="list-group-item">Groom Services</li>
+                            <li class="list-group-item">Menicure Services</li>
+                            <li class="list-group-item">Pedicure Services</li>
+                            <li class="list-group-item">Facial Services</li>
+                            <li class="list-group-item">Massage Services</li>
+                            <li class="list-group-item">Detox Services</li>
+        
+                        </ul>
+                        
+
+                    </div>
+
+                    <!-- Service Items -->
+                    <div class="col-md-5">
+                        <!-- Your existing service items -->
+                         <h1>Hair services</h1>
+                         <hr>
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <!-- <input class="form-check-input" type="" name="service"> -->
+                                    <i class="fa-solid fa-circle-check"></i>                                        Haircut
+                                        
+                                    </label>
+                                    <div class="duration">30 mins</div>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                        </div><!--service item close div-->
+
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        HairColor
+                                        <div class="duration"> 2hrs 30 mins</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                            
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        HairExtensions
+                                        <div class="duration"> 2hrs 30 mins</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                            
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        HairSpa
+                                        <div class="duration">30 mins</div>
+                                    </label>
+                                    
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div> 
+                            
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        <h1>Beauty services</h1>
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <!-- <input class="form-check-input" type="radio" name="service"> -->
+                                    <label class="form-check-label bi bi-check-circle fw-bold">
+                                        Haircut
+                                        <div class="duration">30 mins</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        Haircut
+                                        <div class="duration">30 mins</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input " type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        Haircut
+                                        <div class="duration">30 mins</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        <div class="service-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service">
+                                    <label class="form-check-label fw-bold">
+                                        Haircut
+                                        <div class="duration">30 mins</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fw-bold">$30</div>
+                            
+                            
+
+
+
+                        </div><!--service item close div-->
+                        
+        
+        
+        
+        
+        
+                         
+
+                    </div> <!--services column div close hole tag-->
+
+                    
+                     
+
+                    <!-- Cart -->
+                    <div class="col-md-3">
+                        <div class="">
+                            <h1>cart</h1>
+                        <p>2 items</p>
+                        <div class="service-item d-flex justify-content-between">
+                            <span class="fw-bold">Hair Cut</span>
+                            <span class="fw-bold">$100</span>
+                        </div>
+                        <span class="text-muted ps-4">50 mins</span>
+                        <div class="service-item d-flex justify-content-between">
+                            <span class="fw-bold">Hair Cut</span>
+                            <span class="fw-bold">$100</span>
+                        </div>
+                        <span class="text-muted ps-4">50 mins</span>
+                        <hr>
+                        <div class="service-item d-flex justify-content-between">
+                            <span class="text-muted">Tax</span>
+                            <span class="fw-bold">$30</span>
+                            
+                            
+                        </div>
+                        <div class="service-item d-flex justify-content-between">
+                            <span class="fw-bold">Total</span>
+                            <span class="fw-bold">$60</span>
+                            
+                            
+                        </div>
+                        <div class="text-center  mt-5">
+                        <button class="book btn btn-btn w-100">Book now</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- giftvouchers -->
+         
+
+
+
+    </div>  <!--services giftvocuhers container  closing div-->
+
+
+    <div class="container-mt-5">
+       
+            
+         
+
+        <div class="tab-pane fade" id="gift-vouchers">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="service-item">
+                        <div class="form-check">
+                            <span><i class="bi bi-circle"></i> </span>
+
+                            <label class="form-check-label">
+                                <h5>Daughter's Day</h5>
+                                <p class="text-muted">Validity:unlimited voucher value : $80</p>
+                            </label>
+                            <span class="float-end">$85</span>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="form-check">
+                            <span><i class="bi bi-circle"></i> </span>
+
+                            <label class="form-check-label">
+                                <h5>Daughter's Day</h5>
+                                <p class="text-muted">Validity:unlimited voucher value : $80</p>
+                            </label>
+                            <span class="float-end">$85</span>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="form-check">
+                            <span><i class="bi bi-circle"></i> </span>
+
+                            <label class="form-check-label">
+                                <h5>Daughter's Day</h5>
+                                <p class="text-muted">Validity:unlimited voucher value : $80</p>
+                            </label>
+                            <span class="float-end">$85</span>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="form-check">
+                            <span><i class="bi bi-circle"></i> </span>
+
+                            <label class="form-check-label">
+                                <h5>Daughter's Day</h5>
+                                <p class="text-muted">Validity:unlimited voucher value : $80</p>
+                            </label>
+                            <span class="float-end">$85</span>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="form-check">
+                            <span><i class="bi bi-circle"></i> </span>
+
+                            <label class="form-check-label">
+                                <h5>Daughter's Day</h5>
+                                <p class="text-muted">Validity:unlimited voucher value : $80</p>
+                            </label>
+                            <span class="float-end">$85</span>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="form-check">
+                            <span><i class="bi bi-circle"></i> </span>
+
+                            <label class="form-check-label">
+                                <h5>Daughter's Day</h5>
+                                <p class="text-muted">Validity:unlimited voucher value : $80</p>
+                            </label>
+                            <span class="float-end">$85</span>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="form-check">
+                            <span><i class="bi bi-circle"></i> </span>
+
+                            <label class="form-check-label">
+                                <h5>Daughter's Day</h5>
+                                <p class="text-muted">Validity:unlimited voucher value : $80</p>
+                            </label>
+                            <span class="float-end">$85</span>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="form-check">
+                            <span><i class="bi bi-circle"></i> </span>
+
+                            <label class="form-check-label">
+                                <h5>Daughter's Day</h5>
+                                <p class="text-muted">Validity:unlimited voucher value : $80</p>
+                            </label>
+                            <span class="float-end">$85</span>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="form-check">
+                            <span><i class="bi bi-circle"></i> </span>
+
+                            <label class="form-check-label">
+                                <h5>Daughter's Day</h5>
+                                <p class="text-muted">Validity:unlimited voucher value : $80</p>
+                            </label>
+                            <span class="float-end">$85</span>
+                        </div>
+                    </div>
+                    <!-- Add more gift vouchers as needed -->
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Cart</h5>
+                            <div id="cart-items">
+                                <!-- Cart items will be added here -->
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between">
+                                <span>Total:</span>
+                                <span id="cart-total">$0</span>
+                            </div>
+                            <button class="book-btn w-100 mt-3">Book Now</button>
+                        </div>
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+         </div>
+
+         <!-- 4th card start -->
+         <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-8" id="header">
+                    <!-- Your existing header content -->
+                
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-light text-dark p-2 rounded me-3">N</div>
+                        <div>
+                            <h4 class="mb-0">Natural Beauty Salon, Spa and Wellness Center</h4>
+                            
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <i class="bi bi-geo-alt"></i> 319, Bin Souqat centre, Rashidiya branch, UAE
+                        <a href="#" class="view-map p-5">View Map</a>
+                    </div>
+                    <div class="mb-2">
+                        <i class="bi bi-clock"></i> 9:00 AM to 9:00 PM
+                    </div>
+                    <div>
+                        <i class="bi bi-lightning"></i> Instant booking
+                        <p class="rating">★ 4.8</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://images.pexels.com/photos/705255/pexels-photo-705255.jpeg" alt="Salon" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>          <!--header closing div tag-->
+
+
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3>Select Staff</h3>
+                    <div class="staff-select d-flex flex-wrap">
+                        <div class="staff-option"><i class="bi bi-circle"></i>No preference</div>
+                        <div class="staff-option active"> <i class="bi bi-circle-fill"></i>Ryan</div>
+                        <div class="staff-option"> <i class="bi bi-circle"></i>John</div>
+                        <div class="staff-option"> <i class="bi bi-circle"></i>Amelia</div>
+                        <div class="staff-option"> <i class="bi bi-circle"></i>Sam</div>
+                        <div class="staff-option"> <i class="bi bi-circle"></i>Anna</div>
+                    </div>
+                    <h3>Select Date</h3>
+                        <h5>October</h5>
+                    <div class="select-Date d-flex flex-wrap ">
+                        <div class="arrow">&lt;</div>
+                        
+                        <div class="date-option">01 Mon</div>
+                        <div class="date-option active">02 Tue</div>
+                        <div class="date-option">03 Wed</div>
+                        <div class="date-option">04 Thu</div>
+                        <div class="date-option">05 Fri</div>
+                        <div class="date-option">06 Sat</div>
+                        <div class="date-option">07 Sun</div> 
+                        <div class="arrow">&gt;</div>
+                    </div>
+                    
+                </div> <!--col div close-->
+                <div class="col-md-4">
+                
+                <h1>cart</h1>
+                <p>3 items</p>
+                <div class="service-item d-flex justify-content-between">
+                    <span class="fw-bold">Hair Cut</span>
+                    <span class="fw-bold">$30</span>
+                </div>
+                <span class="text-muted ps-4">30 mins</span>
+                <div class="service-item d-flex justify-content-between">
+                    <span class="fw-bold">Hair Cut</span>
+                    <span class="fw-bold">$30</span>
+                </div>
+                <span class="text-muted ps-4">30 min</span><hr>
+                
+                <span class="text-muted ps-4">Date:02 oct,2022</span>
+                
+                <p class="text-muted ps-4">Time:9:15AM</p>
+                <div class="service-item d-flex justify-content-between">
+                    <span class="text-muted">Net Total</span>
+                    <span class="fw-bold">$60</span>
+                    
+                    
+                </div>
+                <div class="service-item d-flex justify-content-between">
+                    <span class="text-muted">Tax</span>
+                    <span class="fw-bold">$30</span>
+                    
+                    
+                </div>
+                <div class="service-item d-flex justify-content-between">
+                    <span class="fw-bold">Total</span>
+                    <span class="fw-bold">$90</span>
+                    
+                    
+                </div>
+                <div class="text-center  mt-5">
+                <button class="book btn btn-btn w-100">Book now</button>
+            </div>
+
+                </div>
+
+                   
+            </div><!--row div close-->
+        
+
+        
+            <div class="row ">
+              <!-- Early Hours -->
+              <div class="col-md-6 mb-4">
+                <h2>Select Staff</h2>
+                <h5>Early hours</h5>
+                <div class="slot-group d-flex flex-wrap">
+                  <div class="col-3"><div class="time-slot">9:00 AM</div></div>
+                  <div class="col-3"><div class="time-slot active">9:15 AM</div></div>
+                  <div class="col-3"><div class="time-slot">9:30 AM</div></div>
+                  <div class="col-3"><div class="time-slot">9:45 AM</div></div>
+                  <div class="col-3"><div class="time-slot">10:00 AM</div></div>
+                  <div class="col-3"><div class="time-slot">10:15 AM</div></div>
+                  <div class="col-3"><div class="time-slot">10:30 AM</div></div>
+                  <div class="col-3"><div class="time-slot">10:45 AM</div></div>
+                  <div class="col-3"><div class="time-slot">11:00 AM</div></div>
+                  <div class="col-3"><div class="time-slot">11:15 AM</div></div>
+                  <div class="col-3"><div class="time-slot">11:30 AM</div></div>
+                  <div class="col-3"><div class="time-slot">12:00 pM</div></div>
+                  
+                </div>
+              </div>
+          
+              <!-- Late Hours -->
+              <div class="col-md-6 mb-4">
+                <h5>Late hours</h5>
+                <div class="slot-group d-flex flex-wrap">
+                 <div class="col-3"> <div class="time-slot">4:00 PM</div></div>
+                 <div class="col-3"> <div class="time-slot">4:15 PM</div></div>
+                  <div class="col-3"><div class="time-slot">4:30 PM</div></div>
+                 <div class="col-3"> <div class="time-slot">4:45 PM</div></div>
+                  <div class="col-3"><div class="time-slot">5:00 PM</div></div>
+                  <div class="col-3"><div class="time-slot">5:15 PM</div></div>
+                 <div class="col-3"> <div class="time-slot">5:30 PM</div></div>
+                 <div class="col-3"> <div class="time-slot">5:45 PM</div></div>
+                 <div class="col-3"><div class="time-slot">6:00 PM</div></div>
+                  <div class="col-3"><div class="time-slot">6:15 PM</div></div>
+                  <div class="col-3"><div class="time-slot">6:30 PM</div></div>
+                 <div class="col-3"> <div class="time-slot">6:45 PM</div></div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- 5th card for forms -->
+        
+
+<div class="container mt-5">
+  <div class="form-section shadow">
+    <h5 class="mb-1 fw-bold">Enter your details</h5>
+    <a href="#" class="text-primary small mb-3 d-block">Enter your details to book an appointment</a>
+
+    <form>
+      <div class="mb-3">
+        <label class="form-label">First name</label>
+        <input type="text" class="form-control" placeholder="First name">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Last name</label>
+        <input type="text" class="form-control" placeholder="Last name">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-control" placeholder="Email">
+      </div>
+
+      <div class="mb-3 position-relative">
+        <label class="form-label">Date of birth</label>
+        <input type="date" class="form-control">
+        <span class="calendar-icon"><i class="bi bi-calendar3"></i></span>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Mobile number</label>
+        <input type="tel" class="form-control" placeholder="e.g. 23451 67891">
+        <small class="text-muted">Please avoid “0” before the mobile number.</small>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Booking notes</label>
+        <textarea class="form-control" rows="3" placeholder="Write any notes..."></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label d-block">Choose payment <span class="text-danger">*</span></label>
+        <div class="service-item d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-circle-fill"></i>Minimum</span>
+            <span class="fw-bold">$30</span>
+            
+            
+        </div>
+        <div class="service-item d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-circle "></i>Full Amount</span>
+            <span class="fw-bold">$310</span>
+            
+            
+        </div>
+        <div class="service-item d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-info-circle-fill"></i>
+                Terms and conditions</span>
+            
+            
+            
+        </div>
+        <div>
+            <button class="btn btn-btn w-100">Book now</button>
+        </div>
+        
+        
+       
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Optional: Add Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</body>
+</html>
+
+    
+
+
+
+    
+
+    
+</body>
+</html>
